@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+# AI 검색봇도 허용
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin
+User-agent: PerplexityBot
+Allow: /
+User-agent: Yeti
+Allow: /
+
+Sitemap: https://sprout-gongbang.vercel.app/sitemap.xml
