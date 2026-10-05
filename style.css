@@ -1,0 +1,82 @@
+/* 새싹 공방 — 유약 샘플과 수업 시간표에서 출발한 디자인 */
+:root{
+  --paper:#EEF0EA;      /* 초벌 전 흙빛이 아니라 셀라돈 기운이 도는 밝은 회녹색 */
+  --paper2:#E2E6DD;
+  --ink:#1E2629;
+  --ink2:#4E5A5D;
+  --line:#C9D0C4;
+  --cobalt:#2747A0;     /* 코발트 유약 */
+  --cobalt-d:#1B3478;
+  --celadon:#8DB3A2;
+  --ash:#B9B3A6;
+  --rust:#9C5B3B;
+  --f-head:"Gothic A1","Pretendard",sans-serif;
+  --f-body:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.65;word-break:keep-all}
+a{color:inherit}
+
+.top{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(16px,4vw,48px);background:rgba(238,240,234,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--f-head);font-weight:900;font-size:19px;text-decoration:none;letter-spacing:-.02em}
+.top-cta{font-weight:700;font-size:14.5px;text-decoration:none;color:var(--cobalt);border-bottom:2px solid var(--cobalt)}
+
+main{max-width:1080px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--f-head);font-weight:900;font-size:clamp(24px,4vw,30px);letter-spacing:-.03em;margin:0 0 22px}
+
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:end;padding-top:clamp(40px,8vw,88px)}
+.hero-text{min-width:0}
+.kicker{margin:0 0 14px;font-weight:700;color:var(--ink2)}
+h1{font-family:var(--f-head);font-weight:900;font-size:clamp(40px,7.4vw,76px);line-height:1.08;letter-spacing:-.045em;margin:0}
+.hero-sub{max-width:30em;margin:22px 0 28px;color:var(--ink2);font-size:17px}
+.btn{display:inline-block;background:var(--cobalt);color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:15px 28px;border-radius:6px}
+.btn:hover{background:var(--cobalt-d)}
+
+.board{min-width:0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px}
+.board-title{margin:0 0 10px;font-weight:700}
+.board table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.board th,.board td{padding:10px 6px;text-align:center;border-bottom:1px solid var(--paper2);font-size:15px}
+.board thead th{font-weight:600;color:var(--ink2);font-size:13.5px}
+.board tbody th{font-family:var(--f-head);font-weight:900;font-size:18px;width:3em}
+.board td{color:var(--cobalt);font-weight:700}
+.board-note{margin:12px 0 0;font-size:13.5px;color:var(--ink2)}
+.glaze{display:flex;height:10px;margin-top:16px;border-radius:2px;overflow:hidden}
+.glaze i{flex:1}
+.glaze i:nth-child(1){background:var(--cobalt)}
+.glaze i:nth-child(2){background:var(--celadon)}
+.glaze i:nth-child(3){background:var(--ash)}
+.glaze i:nth-child(4){background:var(--rust)}
+.glaze i:nth-child(5){background:var(--ink)}
+
+.class-row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:22px 0;border-top:1px solid var(--line)}
+.classes,.faq{border-bottom:0}
+.class-row:last-child{border-bottom:1px solid var(--line)}
+.class-name{font-family:var(--f-head);font-weight:700;font-size:clamp(20px,3vw,26px);letter-spacing:-.02em}
+.num{display:inline-block;width:2.4em;color:var(--cobalt);font-variant-numeric:tabular-nums}
+.class-row dl{display:flex;gap:28px;margin:0}
+.class-row dt{font-size:13px;color:var(--ink2)}
+.class-row dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+
+.faq details{border-top:1px solid var(--line);padding:16px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";display:inline-block;width:1.4em;color:var(--cobalt);font-weight:900}
+.faq details[open] summary::before{content:"−"}
+.faq p{margin:8px 0 0 1.4em;color:var(--ink2)}
+
+.reviews .empty{margin:0;padding:28px;border:1px dashed var(--line);border-radius:8px;color:var(--ink2);text-align:center}
+.inquiry .placeholder{color:var(--ink2)}
+
+.foot{max-width:1080px;margin:0 auto;padding:28px clamp(16px,4vw,48px) 96px;color:var(--ink2);font-size:13.5px}
+.sticky-cta{display:none}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;align-items:start}
+  .class-row{grid-template-columns:1fr}
+  .class-row dl{gap:20px}
+  .top-cta{display:none}
+  .sticky-cta{display:block;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:20;text-align:center;background:var(--cobalt);color:#fff;text-decoration:none;font-weight:700;padding:15px;border-radius:8px;box-shadow:0 8px 20px rgba(30,38,41,.2)}
+}

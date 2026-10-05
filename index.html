@@ -3,21 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>새싹 공방</title>
-<style>
-  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f3f1ea;font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif;color:#222}
-  .card{width:min(360px,90vw);background:#fff;border-radius:16px;padding:28px 24px;box-shadow:0 6px 24px rgba(0,0,0,.08)}
-  h1{margin:0 0 8px;font-size:26px}
-  p{margin:6px 0;line-height:1.6;color:#555}
-  a.btn{display:block;margin-top:18px;text-align:center;background:#2f6b4f;color:#fff;text-decoration:none;padding:12px;border-radius:10px;font-weight:700}
-</style>
+<title>새싹 공방 · 주말 2시간, 도자기·캔들 원데이 클래스</title>
+<meta name="description" content="토·일 오후, 2시간이면 완성하는 도자기 머그(45,000원)와 1시간 30분 소이 캔들(35,000원) 원데이 클래스. 한 반 최대 6명, 재료비 포함.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
-    <h1>새싹 공방</h1>
-    <p>주말에 2시간이면 완성하는 도자기·캔들 원데이 클래스</p>
-    <p>손으로 뭔가 만들어 보고 싶은 직장인, 커플, 소규모 모임을 기다려요.</p>
-    <a class="btn" href="mailto:sprout.gongbang@example.com">이메일로 문의하기</a>
-  </div>
+
+<header class="top">
+  <a class="logo" href="/">새싹 공방</a>
+  <a class="top-cta" href="#inquiry">수업 문의하기</a>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="kicker">도자기 · 캔들 원데이 클래스</p>
+      <h1>주말 2시간,<br>내 손으로 만든<br>머그 하나</h1>
+      <p class="hero-sub">도자기 머그는 2시간, 소이 캔들은 1시간 30분. 한 반은 최대 6명이에요.</p>
+      <a class="btn" href="#inquiry">수업 문의하기</a>
+    </div>
+
+    <aside class="board" aria-label="수업 시간">
+      <p class="board-title">수업 시간</p>
+      <table>
+        <thead><tr><th></th><th>오후 2:00</th><th>오후 4:30</th></tr></thead>
+        <tbody>
+          <tr><th>토</th><td>수업</td><td>수업</td></tr>
+          <tr><th>일</th><td>수업</td><td>수업</td></tr>
+        </tbody>
+      </table>
+      <p class="board-note">날짜별 자리는 문의 주시면 확인해서 알려 드려요.</p>
+      <div class="glaze" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    </aside>
+  </section>
+
+  <section class="classes" id="classes">
+    <h2>수업 두 가지</h2>
+    <div class="class-row">
+      <div class="class-name"><span class="num">01</span>도자기 머그 만들기</div>
+      <dl>
+        <div><dt>시간</dt><dd>2시간</dd></div>
+        <div><dt>가격</dt><dd>45,000원</dd></div>
+        <div><dt>포함</dt><dd>재료비</dd></div>
+      </dl>
+    </div>
+    <div class="class-row">
+      <div class="class-name"><span class="num">02</span>소이 캔들 만들기</div>
+      <dl>
+        <div><dt>시간</dt><dd>1시간 30분</dd></div>
+        <div><dt>가격</dt><dd>35,000원</dd></div>
+        <div><dt>포함</dt><dd>재료비</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>처음이어도 괜찮나요?</h2>
+    <details open><summary>처음인데 할 수 있나요?</summary><p>한 반을 최대 6명으로 작게 운영해요. 처음이신 분은 문의 때 말씀해 주세요.</p></details>
+    <details><summary>몇 시간 걸리고 얼마인가요?</summary><p>도자기 머그는 2시간 45,000원, 소이 캔들은 1시간 30분 35,000원이에요. 재료비가 포함돼 있어요.</p></details>
+    <details><summary>언제 할 수 있나요?</summary><p>토요일·일요일 오후 2시와 4시 30분이에요. 원하는 날짜를 문의로 남겨 주세요.</p></details>
+  </section>
+
+  <section class="reviews">
+    <h2>후기</h2>
+    <p class="empty">첫 후기를 기다리고 있어요.</p>
+  </section>
+
+  <section class="inquiry" id="inquiry">
+    <h2>수업 문의하기</h2>
+    <p class="placeholder">문의 폼 자리예요. 4교시에 연결해요.</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>새싹 공방 · 리더플 AI 스쿨 실습실의 교육 실습용 가상 예시예요.</p>
+</footer>
+
+<a class="sticky-cta" href="#inquiry">수업 문의하기</a>
 </body>
 </html>
