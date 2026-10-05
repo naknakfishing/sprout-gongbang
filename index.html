@@ -74,7 +74,15 @@
 
   <section class="inquiry" id="inquiry">
     <h2>수업 문의하기</h2>
-    <p class="placeholder">문의 폼 자리예요. 4교시에 연결해요.</p>
+    <form id="inquiryForm" class="form" novalidate>
+      <label>이름<input name="name" required maxlength="50" autocomplete="name"></label>
+      <label>연락처 <small>전화 또는 이메일</small><input name="contact" required maxlength="100" autocomplete="tel"></label>
+      <label>희망하는 수업과 날짜<input name="message" maxlength="300" placeholder="예) 도자기 머그 / 10월 셋째 주 토요일 오후 2시"></label>
+      <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="agree"><input type="checkbox" name="consent" required> <span>(필수) 문의 답변을 위해 이름·연락처를 받고, 답변 완료 후 90일 뒤 지워요. 동의합니다.</span></label>
+      <button type="submit">문의 보내기</button>
+      <p class="form-msg" role="status"></p>
+    </form>
   </section>
 </main>
 
@@ -83,5 +91,23 @@
 </footer>
 
 <a class="sticky-cta" href="#inquiry">수업 문의하기</a>
+<script>
+document.getElementById('inquiryForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  var f = e.target, msg = f.querySelector('.form-msg'), btn = f.querySelector('button');
+  msg.className = 'form-msg';
+  if (!f.name.value.trim() || !f.contact.value.trim()) { msg.textContent = '이름과 연락처를 적어 주세요.'; msg.classList.add('err'); return; }
+  if (!f.consent.checked) { msg.textContent = '개인정보 수집·이용에 동의해 주세요.'; msg.classList.add('err'); return; }
+  btn.disabled = true;
+  try {
+    var r = await fetch('/api/inquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: f.name.value, contact: f.contact.value, message: f.message.value, website: f.website.value, consent: f.consent.checked }) });
+    var j = await r.json().catch(function () { return {}; });
+    if (!r.ok) throw new Error(j.error || '보내지 못했어요. 잠시 뒤 다시 시도해 주세요.');
+    f.reset(); msg.textContent = '문의가 접수됐어요. 확인 후 연락드릴게요.'; msg.classList.add('ok');
+  } catch (err) { msg.textContent = err.message; msg.classList.add('err'); }
+  btn.disabled = false;
+});
+</script>
 </body>
 </html>

@@ -68,7 +68,18 @@ h1{font-family:var(--f-head);font-weight:900;font-size:clamp(40px,7.4vw,76px);li
 .faq p{margin:8px 0 0 1.4em;color:var(--ink2)}
 
 .reviews .empty{margin:0;padding:28px;border:1px dashed var(--line);border-radius:8px;color:var(--ink2);text-align:center}
-.inquiry .placeholder{color:var(--ink2)}
+.form{display:grid;gap:14px;max-width:560px}
+.form label{display:grid;gap:6px;font-weight:700}
+.form small{font-weight:500;color:var(--ink2)}
+.form input:not([type=checkbox]){font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
+.form input:focus{outline:2px solid var(--cobalt);outline-offset:1px}
+.form .agree{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:14.5px;color:var(--ink2)}
+.form .agree input{width:20px;height:20px;margin-top:2px;accent-color:var(--cobalt);flex:none}
+.form button{justify-self:start;font:inherit;font-weight:700;font-size:17px;background:var(--cobalt);color:#fff;border:0;border-radius:6px;padding:14px 28px;cursor:pointer}
+.form button:disabled{opacity:.6}
+.trap{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-msg{margin:0;font-weight:700;min-height:1.4em}
+.form-msg.ok{color:#2c6e49}.form-msg.err{color:#a33a2a}
 
 .foot{max-width:1080px;margin:0 auto;padding:28px clamp(16px,4vw,48px) 96px;color:var(--ink2);font-size:13.5px}
 .sticky-cta{display:none}
