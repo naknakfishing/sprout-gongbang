@@ -1,2 +1,4 @@
 .vercel
 .env*
+.admin-password.txt
+node_modules/
